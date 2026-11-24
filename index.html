@@ -1,51 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport"
-     content="width=device-width, initial-scale=1.0">
-     <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog Tech - Gabriel Costa</title>
   
-  <style>
-              header{
-                background-color: #183C63;
-                color:#FFFFFF
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 16px;
-                border: 5px solid
-                #cf1010
-            }
-            main {
-                background-color: #FFFFFF;
-                color: #183C63;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 16px;
-            }
-            img{
-                width: 80px;
-                height: 80px;
-            }
-         </style>
-      </head>
-      <body>
-         <header>
-         <h1>Meu blog tech</h1>
-         <p>Vou compartilhar conhecimentos sobre
-            tecnologia e programação</p>
-      </header>
-      <main>
-          <img src="imagem-bolg.jpeg" alt="Logótipo digital para blogue de tecnologia e educação,
-           composto por um livro aberto com circuitos
-           impressos nas páginas e uma lâmpada acesa na base,
-           sobre um fundo azul-escuro com padrão
-           de rede tecnológica e código binário.">
-           <h2>Meu primeiro post</h2>
-           <p>Por: Gabriel Costa</p>
-           <p>Boas-Vindas ao meu novo blog aqui vou
-            compartilhar dicas de programação e curiosidades
-       da área de tecnologia.</p>
-    </body>
+    <style>
+        /* Reset básico e fonte mais agradável */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f6; /* Fundo cinza-azulado claro para destacar o conteúdo */
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #183C63;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            border-bottom: 5px solid #cf1010;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 0 0 16px 0;
+            color: #d0e1f9;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Área Principal */
+        main {
+            background-color: #FFFFFF;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Estilo de cada Postagem */
+        article {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .post-header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid #183C63;
+        }
+
+        article h2 {
+            color: #183C63;
+            margin: 0 0 4px 0;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: #666666;
+            margin: 0;
+        }
+
+        /* Etiqueta de categoria */
+        .tag {
+            display: inline-block;
+            background-color: #183C63;
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+
+        /* Botão "Ler mais" */
+        .btn-ler {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #cf1010;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-ler:hover {
+            background-color: #a30c0c;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #183C63;
+            color: #d0e1f9;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+            font-size: 0.85rem;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Meu Blog Tech</h1>
+        <p>Compartilhando conhecimentos sobre tecnologia, programação e inovação</p>
+        
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#artigos">Artigos</a>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main id="artigos">
+        <!-- Postagem 1 -->
+        <article>
+            <div class="post-header">
+                <img src="imagem-blog.jpeg" alt="Logótipo digital para blogue de tecnologia e educação, composto por um livro aberto com circuitos impressos nas páginas e uma lâmpada acesa na base, sobre um fundo azul-escuro com padrão de rede tecnológica e código binário.">
+                <div>
+                    <h2>Meu primeiro post: Bem-vindos ao blog!</h2>
+                    <p class="meta-info">Por: <strong>Gabriel Costa</strong> | Publicado em: 24 de Novembro de 2026</p>
+                    <span class="tag">Novidades</span>
+                </div>
+            </div>
+            
+            <p>Boas-vindas ao meu novo espaço na web! Aqui vou compartilhar dicas práticas de programação, tutoriais de desenvolvimento web e curiosidades da área de tecnologia para quem está começando ou quer evoluir no código.</p>
+            <a href="#" class="btn-ler">Ler artigo completo</a>
+        </article>
+
+        <!-- Postagem 2 (Exemplo) -->
+        <article>
+            <div class="post-header">
+                <div>
+                    <h2>Por que aprender HTML e CSS é essencial hoje?</h2>
+                    <p class="meta-info">Por: <strong>Gabriel Costa</strong> | Publicado em: 24 de Novembro de 2026</p>
+                    <span class="tag">Desenvolvimento Web</span>
+                </div>
+            </div>
+            
+            <p>Antes de partir para frameworks complexos, dominar a estrutura semântica do HTML5 e a estilização moderna com CSS3 é o passo mais importante para qualquer desenvolvedor front-end construir sites rápidos e acessíveis.</p>
+            <a href="#" class="btn-ler">Ler artigo completo</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Meu Blog Tech - Desenvolvido por Gabriel Costa. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
 </html>
