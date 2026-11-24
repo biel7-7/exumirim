@@ -33,6 +33,7 @@
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
+        /* Reset corrigido (trocado '-' por '*') */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -91,4 +92,89 @@
             text-decoration: none;
             font-weight: 500;
             margin-left: 18px;
-            font-size: 0.9
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #cbd5e1;
+        }
+
+        .theme-btn {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .theme-btn:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Layout Principal */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin: 40px auto;
+        }
+
+        /* Cartões de Artigos e Sidebar */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .post-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .post-tag {
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .read-more:hover {
+            color: var(--accent-hover);
