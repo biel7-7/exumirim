@@ -1,238 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+*<!DOCTYPE html>
+<html lang="pr-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog de tecnologia, desenvolvimento web e programação por Gabriel Costa.">
-    <title>Meu Blog Tech | Gabriel Costa</title>
-  
-    <style>
-        /* Variáveis de Cores */
-        :root {
-            --primary: #183C63;
-            --primary-dark: #102a46;
-            --accent: #cf1010;
-            --accent-hover: #a30c0c;
-            --bg-body: #f0f4f8;
-            --bg-card: #ffffff;
-            --text-main: #2d3748;
-            --text-muted: #718096;
-            --border-color: #e2e8f0;
-            --code-bg: #f1f5f9;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>blog</title>
+<style>
+header{
+background-color:#C1DFFF;
+color:#000000;
+text-align: center;
+max-width: 800px;
+margin: 0 auto;
+}
 
-        /* Tema Escuro */
-        body.dark-mode {
-            --bg-body: #121822;
-            --bg-card: #1e293b;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --code-bg: #0f172a;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
+main{
+background-color:#FFFFFF;
+color:#1c256e;
+max-width: 800px;
+margin: 0 auto;
+padding: 16px;
+display: flex;
+}
+img{
+width: 80px;
+height: 80px;
 
-        /* Reset corrigido com '*' */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* Cabeçalho Superior */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: #ffffff;
-            border-bottom: 4px solid var(--accent);
-            padding: 20px 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .brand h1 {
-            font-size: 1.8rem;
-            letter-spacing: -0.5px;
-        }
-
-        .brand p {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-        }
-
-        /* Navegação e Botão de Tema */
-        .nav-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 18px;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        nav a:first-child {
-            margin-left: 0;
-        }
-
-        nav a:hover {
-            color: #cbd5e1;
-        }
-
-        .theme-btn {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background-color 0.2s;
-        }
-
-        .theme-btn:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-        }
-
-        /* Layout Principal */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin: 40px auto;
-        }
-
-        /* Cartões de Artigos e Sidebar */
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        .post-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
-
-        .post-tag {
-            background-color: var(--accent);
-            color: #ffffff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: var(--text-main);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            color: var(--text-main);
-        }
-
-        .card p {
-            margin-bottom: 15px;
-        }
-
-        code {
-            background-color: var(--code-bg);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9rem;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .read-more:hover {
-            color: var(--accent-hover);
-        }
-
-        /* Lista da Sidebar */
-        .sidebar-list {
-            list-style: none;
-        }
-
-        .sidebar-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .sidebar-list li:last-child {
-            border-bottom: none;
-        }
-
-        .sidebar-list a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .sidebar-list a:hover {
-            color: var(--accent);
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 25px 0;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
-
-        /* Responsividade para celulares e tablets */
-        @media (max-width: 768px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+}
+</style>
 </head>
-<body>
 
-    <header>
-        <div
+<body>
+<header>
+<h1>Direto ao ponto</h1>
+<p>Mostrar que seu carro não é um bixo de 7 cabeças e coisas sobre carros</p>
+</header>
+<main>
+<img src="imagem-blog.png" alt="Logo circular com fundo escuro exibindo a parte dianteira de um carro esportivo vermelho. Uma flecha branca em diagonal
+corta o centro da imagem, apontando para cima e para a direita. Abaixo do veículo, está escrito em letras maiúsculas brancas o texto "DIRETO AO PONTO">
+<div>
+<h2>Meu preimeiro post</h2>
+<p>Por Gabriel Costa</p>
+<p>Boas vindas ao meu site!
+aqui vou compartilhar dicas
+sobre carros e curiosidades sobre a area. </p>
+<button>❤️ <span>0</span></button>
+<div>
+
+</main>
+<body>
+<script>
+const botao = document.querySelector("button");
+botao.addEventListener("click", botaoClicado);
+
+function botaoCLicado(){
+console.log("fui clicado");
+let texto = botao.querySelector("span");
+texto.textContent++;
+}
+
+</script>
+</html>
