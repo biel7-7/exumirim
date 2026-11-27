@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Direto ao ponto - Blog de Jogos</title>
   <style>
-    /* Reset básico para evitar bugs de espaçamento */
+    /* Reset básico corrigido com asterisco (*) */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -25,15 +26,44 @@
       color: #0d133d;
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 20px auto;
-      padding: 24px;
+      margin: 0 auto 24px auto;
+      padding: 28px 24px;
       border-radius: 12px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
 
     header h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      color: #1c256e;
+      margin-bottom: 16px;
+    }
+
+    /* Menu de navegação simples */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0d133d;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 6px 14px;
+      border-radius: 16px;
+      background-color: rgba(255, 255, 255, 0.6);
+      transition: background-color 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #ffffff;
     }
 
     main {
@@ -53,6 +83,12 @@
       display: flex;
       gap: 20px;
       align-items: flex-start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    article:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
     }
 
     .logo-post {
@@ -61,122 +97,32 @@
       border-radius: 50%;
       object-fit: cover;
       background-color: #1c256e;
-      flex-shrink: 0; /* Impede a imagem de esmagar em telas pequenas */
+      flex-shrink: 0;
+    }
+
+    .conteudo-post {
+      flex: 1;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #e6f0ff;
+      color: #1c256e;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
     }
 
     .conteudo-post h2 {
       margin-bottom: 4px;
       color: #0d133d;
+      font-size: 1.4rem;
     }
 
     .autor {
       font-size: 0.85rem;
       color: #666;
       margin-bottom: 12px;
-    }
-
-    .texto-post {
-      margin-bottom: 16px;
-    }
-
-    /* Botão estilizado e interativo */
-    .btn-curtir {
-      background-color: #f0f4f8;
-      border: 2px solid #C1DFFF;
-      color: #1c256e;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .btn-curtir:hover {
-      background-color: #C1DFFF;
-      transform: scale(1.05);
-    }
-
-    .btn-curtir:active {
-      transform: scale(0.95);
-    }
-
-    footer {
-      text-align: center;
-      max-width: 800px;
-      margin: 30px auto 0 auto;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    /* Ajuste para celulares */
-    @media (max-width: 500px) {
-      article {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <h1>Direto ao ponto</h1>
-    <p>Mostrar que saber sobre jogos não é difícil</p>
-  </header>
-
-  <main>
-    <!-- Post 1 -->
-    <article>
-      <img class="logo-post" src="imagem-blog.png" onerror="this.src='https://placehold.co/80x80/1c256e/ffffff?text=JOGOS'" alt="Logo circular com fundo escuro exibindo a parte dianteira de um carro esportivo vermelho. Uma flecha branca em diagonal corta o centro da imagem, apontando para cima e para a direita. Abaixo do veículo, está escrito em letras maiúsculas brancas o texto DIRETO AO PONTO">
-      
-      <div class="conteudo-post">
-        <h2>Meu primeiro post</h2>
-        <p class="autor">Por Gabriel Costa • 27 de Novembro</p>
-        <p class="texto-post">
-          Boas-vindas ao meu site! Aqui vou compartilhar dicas práticas sobre jogos, análises rápidas e curiosidades sobre o mundo gamer sem enrolação.
-        </p>
-        <button class="btn-curtir">❤️ <span>0</span></button>
-      </div>
-    </article>
-
-    <!-- Post 2 (Exemplo de como adicionar mais posts) -->
-    <article>
-      <img class="logo-post" src="imagem-blog.png" onerror="this.src='https://placehold.co/80x80/1c256e/ffffff?text=DICAS'" alt="Logo do blog Direto ao Ponto">
-      
-      <div class="conteudo-post">
-        <h2>Por que os jogos de corrida parecem tão rápidos?</h2>
-        <p class="autor">Por Gabriel Costa • 27 de Novembro</p>
-        <p class="texto-post">
-          Você já reparou que correr a 100 km/h em um jogo parece muito mais rápido do que na vida real? Isso acontece por causa do campo de visão (FOV) e do efeito de desfoque nas bordas da tela!
-        </p>
-        <button class="btn-curtir">❤️ <span>0</span></button>
-      </div>
-    </article>
-  </main>
-
-  <footer>
-    <p>© 2026 Direto ao ponto - Criado por Gabriel Costa</p>
-  </footer>
-
-  <script>
-    // Seleciona TODOS os botões com a classe .btn-curtir
-    const botoes = document.querySelectorAll(".btn-curtir");
-
-    // Para cada botão encontrado, adiciona o evento de clique
-    botoes.forEach(function(botao) {
-      botao.addEventListener("click", function() {
-        const contador = botao.querySelector("span");
-        let curtidasAtuais = Number(contador.textContent);
-        contador.textContent = curtidasAtuais + 1;
-      });
-    });
-  </script>
-
-</body>
-</html>
