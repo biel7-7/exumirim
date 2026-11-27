@@ -1,128 +1,62 @@
-
-<!DOCTYPE html>
-<html lang="pt-br">
+*<!DOCTYPE html>
+<html lang="pr-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Direto ao ponto - Blog de Jogos</title>
-  <style>
-    /* Reset básico corrigido com asterisco (*) */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>blog</title>
+<style>
+header{
+background-color:#C1DFFF;
+color:#000000;
+text-align: center;
+max-width: 800px;
+margin: 0 auto;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
-      color: #1c256e;
-      line-height: 1.6;
-      padding: 20px;
-    }
+main{
+background-color:#FFFFFF;
+color:#1c256e;
+max-width: 800px;
+margin: 0 auto;
+padding: 16px;
+display: flex;
+}
+img{
+width: 80px;
+height: 80px;
 
-    header {
-      background-color: #C1DFFF;
-      color: #0d133d;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 24px auto;
-      padding: 28px 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
+}
+</style>
+</head>
 
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 6px;
-    }
+<body>
+<header>
+<h1>Direto ao ponto</h1>
+<p>Mostrar que saber sobre jogos não é dificil</p>
+</header>
+<main>
+<img src="imagem-blog.png" alt="Logo circular com fundo escuro exibindo a parte dianteira de um carro esportivo vermelho. Uma flecha branca em diagonal
+corta o centro da imagem, apontando para cima e para a direita. Abaixo do veículo, está escrito em letras maiúsculas brancas o texto "DIRETO AO PONTO">
+<div>
+<h2>Meu preimeiro post</h2>
+<p>Por Gabriel Costa</p>
+<p>Boas vindas ao meu site!
+aqui vou compartilhar dicas
+sobre jogos e curiosidades sobre a area. </p>
+<button>❤️ <span>0</span></button>
+<div>
 
-    header p {
-      font-size: 1.05rem;
-      color: #1c256e;
-      margin-bottom: 16px;
-    }
+</main>
+<body>
+<script>
+const botao = document.querySelector("button");
+botao.addEventListener("click", botaoClicado);
 
-    /* Menu de navegação simples */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+function botaoCLicado(){
+console.log("fui clicado");
+let texto = botao.querySelector("span");
+texto.textContent++;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #0d133d;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 6px 14px;
-      border-radius: 16px;
-      background-color: rgba(255, 255, 255, 0.6);
-      transition: background-color 0.2s;
-    }
-
-    nav a:hover {
-      background-color: #ffffff;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    /* Estilo de cada postagem */
-    article {
-      background-color: #FFFFFF;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    article:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .logo-post {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      background-color: #1c256e;
-      flex-shrink: 0;
-    }
-
-    .conteudo-post {
-      flex: 1;
-    }
-
-    .tag {
-      display: inline-block;
-      background-color: #e6f0ff;
-      color: #1c256e;
-      font-size: 0.75rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-bottom: 8px;
-    }
-
-    .conteudo-post h2 {
-      margin-bottom: 4px;
-      color: #0d133d;
-      font-size: 1.4rem;
-    }
-
-    .autor {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 12px;
+</script>
+</html>
